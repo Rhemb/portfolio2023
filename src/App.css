@@ -1,42 +1,789 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
+
+* , ul {
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+li {
+  list-style: none;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+img {
+  height: auto;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo > h1 {
+  font-size: 40px;
+  border: 2px solid;
+  padding: 5px;
+}
+
+.navbar {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px 50px 0 50px;
+}
+
+.nav-items {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.navitem {
+  padding: 20px;
+  color: #FFFF;
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #FFFF;
+}
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #FFFF;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: center;
+}
+
+.main-img-container {
+  height: 100vh;
+  color: #FFFF;
+}
+
+.image1 {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.firstname {
+  position: absolute;
+  top: 2em;
+  left: 25px;
+  font-size: 160px;
+  font-weight: 600;
+}
+
+.lastname {
+  position: absolute;
+  top: 2em;
+  right: 100px;
+  font-size: 160px;
+  font-weight: 600;
+}
+
+.specialty1 {
+  position: absolute;
+  bottom: 11em;
+  left: 320px;
+  font-weight: 200;
+}
+
+.specialty2 {
+  position: absolute;
+  bottom: 11em;
+  right: 380px;
+  font-weight: 200;
+}
+
+/* About Section */
+.about-section {
+  display: flex;
+  flex-direction: row;
+  margin: 10em;
+}
+
+#about {
+  color: rgb(232, 124, 174);
+  font-weight: 700;
+}
+
+/* GIF credit to Peach  */
+.cat-gif {
+  height: 50px;
+  width: auto;
+}
+
+.image2 {
+  height: 40em;
+  width: 35em;
+  object-fit: cover;
+  overflow: hidden;
+  box-shadow: -45px -20px 10px 12px rgb(232, 124, 174);
+}
+
+.bio-container {
+  margin-left: 3em;
+}
+
+.about-tech-header {
+  color: rgba(133, 99, 157, 0.615);
+}
+
+.emphasize {
+  color: rgb(236, 110, 196); 
+}
+
+.skills-section {
+  background-color: rgba(240, 165, 200, 0.577);
+}
+
+.tech-subheader {
+  margin-top: 5px;
+  color: rgb(181, 170, 170);
+}
+/* Projects */
+
+/* #projects { margin: 2em } */
+
+.projects-title {
+  color: rgb(232, 124, 174);
+  font-weight: 600;
+}
+
+.project-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(232, 124, 174);
+}
+
+.project-subheader {
+  font-weight: 200;
+  color: rgb(181, 170, 170);
+}
+
+.project-desc {
+  font-weight: 300;
+}
+/* Contact Section */
+.contact-header {
+  font-weight: 600;
+  color: rgb(232, 124, 174);
+}
+
+.contact-subhead {
+  color: rgb(181, 170, 170);
+  font-weight: 400;
+}
+
+.mail-gif {
+  height: 30px;
+  width: auto;
+  margin-left: 10px;
+}
+
+.git-hub, .linked-in {
+  color: rgba(133, 99, 157, 0.615);
+}
+
+.git-hub:hover {
+  color: lightgray;
+  animation: fadeIn 1s;
+}
+.linked-in:hover {
+  color: rgb(86, 86, 184);
+  animation: fadeIn 1s;
+}
+.email-link { 
+  font-weight: 400; 
+  border-radius: 5px;
+}
+.email-link:hover {
+  background-color: #FFFF;
+  color: rgb(232, 124, 174);
+  box-shadow: 0 0 10px 2px rgb(232, 124, 174);
+  animation: fadeIn 2s;
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Responsive */
+@media screen and (max-width: 425px) {
+  .firstname {
+    top: 430px;
+    left: 1px;
+    font-size: 70px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .lastname {
+    top: 500px;
+    left: 1px;
+    font-size: 70px;
+  }
+
+  .specialty1 {
+    bottom: 39px;
+    left: 5px;
+    font-size: 30px;
+  }
+  
+  .specialty2 {
+    bottom: 5px; 
+    left: 5px;
+    width: 10em;
+    font-size: 30px;
+  }
+
+  .logo > h1 {
+    font-size: 25px;
+    padding: 4px;
+    margin-right: 20px;
+  }
+
+  .navbar {
+    margin: 1em 2em 0 3em;
+  }
+  
+  .nav-items {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  
+  .navitem {
+    padding: 6px;
+  }
+
+  .about-section {
+    margin: 2em;
+    flex-direction: column;
+  }
+  
+  #about {
+    font-size: 20px;
+    margin: 0;
+  }
+  
+  /* GIF credit to Peach  */
+  .cat-gif {
+    height: 40px;
+    width: auto;
+  }
+  
+  .image2 {
+    height: 5em;
+    width: 10em;
+    display: flex;
+    margin: 0 6em 1em 6em;
+    box-shadow: -15px -4px 10px 2px rgb(232, 124, 174);
+  }
+  
+  .bio-container {
+    margin-left: 0;
+  }
+
+  .bio-subheader {
+    margin: 5px 0;
+    font-size: 10px;
+  }
+
+  .bio-section {
+    font-size: 11px;
+  }
+
+  .tech-header {
+    padding: 10px 0 0 10px;
+    text-align: center;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .tech-subheader {
+    font-size: 10px;
+    text-align: center;
+  }
+
+  .skills-section {
+    height: 25vh;
+  }
+
+  .tech-icons {
+    overflow-x: auto;
+  }
+
+  i {
+    font-size: 50px;
+    color: #FFFF;
+    padding: 6px;
+    text-overflow: wrap;
+  }
+
+  /* Projects */
+  #projects {
+    margin: 2em;
+  }
+  .projects-header {
+    margin: 2em 0;
+  }
+  /* GIF Credits to Pusheen creators Claire Belton and Andrew Duff */
+  .pusheen-gif {
+    height: 40px;
+    width: auto;
+    margin-left: 10px;
+  }
+
+  .proj-img {
+    padding-bottom: 1em;
+  }
+
+  /* Contact Section 425px */
+  #contact { margin: 2em; }
+  
+  .contact-subhead { font-size: 15px; }
+  
+  .contact-text { font-size: 12px; }
+  
+  .email-link {
+    color: #FFFF;
+    background-color: rgba(232, 124, 174, 0.266);
+    border: 2px solid rgb(232, 124, 174);
+    padding: 5px;
+    font-weight: 400;
+  }
+
+  .icon-container { margin-bottom: 20px }
+
+  .linked-in { margin-right: 20px }
+  
+  footer { font-size: 10px; }
+}
+
+@media screen and (min-width: 768px) {
+  .firstname {
+    top: 290px;
+    left: 25px;
+    font-size: 55px;
+  }
+  
+  .lastname {
+    top: 290px;
+    right: 50px;
+    font-size: 55px;
+  }
+  
+  .specialty1 {
+    top: 345px;
+    left: 65px;
+    font-size: 20px;
+  }
+  
+  .specialty2 {
+    top: 345px;
+    right: 100px;
+    font-size: 20px;
+  }
+
+  .logo > h1 {
+    font-size: 25px;
+    padding: 4px;
+    margin-right: 30px;
+  }
+
+  .navbar {
+    margin: 1em 0 0 3em;
+  }
+  
+  .nav-items {
+    font-size: 17px;
+    font-weight: 500;
+  }
+  /* About */
+  .about-section {
+    margin: 2em;
+  }
+  
+  #about {
+    font-size: 20px;
+    margin: 0;
+  }
+  
+  .image2 {
+    height: 18em;
+    width: 15em;
+    display: flex;
+    margin: 4em 2em 0em 2em;
+    box-shadow: -15px -4px 10px 2px rgb(232, 124, 174);
+  }
+  
+  .bio-container {
+    margin-left: 0;
+  }
+
+  .bio-subheader {
+    margin: 5px 0;
+    font-size: 10px;
+  }
+
+  .bio-section {
+    font-size: 11px;
+  }
+
+  /* Tech Stacks */
+  .tech-header {
+    padding: 10px 0 0 10px;
+    text-align: center;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .tech-subheader {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .skills-section {
+    height: 26vh;
+  }
+
+  .tech-icons {
+    overflow-x: auto;
+  }
+
+  i {
+    font-size: 50px;
+    color: #FFFF;
+    padding: 6px;
+    text-overflow: wrap;
+  }
+
+  /* projects */
+  .projects-title {
+    margin-bottom: 1em;
+  }
+  .projects-header {
+    margin: 2em 2em 0em 2em;
+    text-align: center;
+  }
+  /* GIF Credits to Pusheen creators Claire Belton and Andrew Duff */
+  .pusheen-gif {
+    height: 50px;
+    width: auto;
+    margin-left: 10px;
+  }
+
+  .project {
+    margin: 1em 2em 4em 2em;
+  }
+
+  .proj-img {
+    height: 200px;
+    width: 365px;
+  }
+
+  .project-title {
+    font-size: 40px;
+    margin: 0;
+  }
+
+  .project-subheader {
+    font-size: 12px;
+    margin: 0;
+  }
+
+  .project-desc {
+    font-size: 16px;
+  }
+
+  .project-desc-container1 {
+    margin-left: 20px;
+  }
+  .project-desc-container2 {
+    margin-right: 20px;
+  }
+
+    /* Contact Section 768px */
+    #contact { margin: 2em 2em 0 2em; }
+  
+    .contact-subhead { font-size: 20px; }
+    
+    .contact-text { font-size: 15px; }
+    
+    .email-link {
+      color: #FFFF;
+      background-color: rgba(232, 124, 174, 0.266);
+      border: 2px solid rgb(232, 124, 174);
+      padding: 5px;
+      font-weight: 400;
+    }
+  
+    .icon-container { margin-bottom: 20px }
+  
+    .linked-in { margin-right: 20px }
+    
+    footer { font-size: 12px; }
+
+    .mail-gif {
+      height: 35px;
+      margin-left: 1em;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+  .firstname {
+    top: 290px;
+    left: 25px;
+    font-size: 80px;
+  }
+  
+  .lastname {
+    top: 290px;
+    right: 75px;
+    font-size: 80px;
+  }
+  
+  .specialty1 {
+    top: 375px;
+    left: 150px;
+  }
+  
+  .specialty2 {
+    top: 375px;
+    right: 210px;
+  }
+
+  .about-section {
+    display: flex;
+    justify-content: center;
+  }
+
+  .bio-section {
+    width: 35em;
+    font-size: 13px;
+  }
+
+  .image2 {
+    height: 23em;
+    width: 20em;
+    display: flex;
+    margin: 3em 5em 0em 2em;
+    box-shadow: -25px -15px 10px 4px rgb(232, 124, 174);
+  }
+
+  .tech-icons {
+    justify-content: center;
+  }
+
+  /* PROJECTS 1024px */
+  .proj-img {
+    height: auto;
+    width: 450px;
+  }
+
+  .project-title {
+    font-size: 45px;
+  }
+
+  .project-subheader {
+    font-size: 15px;
+  }
+
+  .project-desc {
+    font-size: 20px;
+  }
+
+  .project-desc-container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .mail-gif { height: 40px; }
+  
+  .email-link { padding: 10px; }
+
+  .icon-container { margin-bottom: 20px;}
+
+  .linked-in { margin-right: 20px; }
+  
+  footer { font-size: 12px; }
+}
+
+@media screen and (min-width: 1440px) {
+  .firstname {
+    top: 250px;
+    left: 10px;
+    font-size: 120px;
+  }
+  
+  .lastname {
+    top: 250px;
+    right: 90px;
+    font-size: 120px;
+  }
+  
+  .specialty1 {
+    top: 375px;
+    left: 150px;
+    font-size: 35px;
+  }
+  
+  .specialty2 {
+    top: 375px;
+    right: 250px;
+    font-size: 35px;
+  }
+
+  .about-section {
+    margin: 6em;
+  }
+
+  .image2 {
+    height: 23em;
+    width: 20em;
+    display: flex;
+    margin: 2em 3em 1em 0em;
+    box-shadow: -20px -10px 10px 5px rgb(232, 124, 174);
+  }
+
+  .bio-subheader {
+    font-size: 15px;
+  }
+
+  .bio-section {
+    width: 50em;
+    font-size: 15px;
+  }
+
+  /* tech skills section */
+  .tech-subheader {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  i { font-size: 55px; }
+
+  .skills-section {
+    height: 28vh;
+  }
+
+  .proj-img {
+    height: 320px;
+    width: 600px;
+  }
+
+  .project-title { font-size: 45px; }
+
+  .project-subheader { font-size: 20px; }
+
+  .project-desc { font-size: 25px; }
+
+  .project-desc-container1 { margin-left: 3em; }
+
+  .project-desc-container2 { margin-right: 3em; }
+
+  .contact-title-container { justify-content: center; }
+
+  .contact-container { 
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media screen and (min-width: 2560px) {
+  .firstname {
+    top: 250px;
+    left: 70px;
+    font-size: 200px;
   }
-}
+  
+  .lastname {
+    top: 250px;
+    right: 200px;
+    font-size: 200px;
+  }
+  
+  .specialty1 {
+    top: 500px;
+    left: 460px;
+    font-size: 50px;
+  }
+  
+  .specialty2 {
+    top: 500px;
+    right: 550px;
+    font-size: 50px;
+  }
 
-.card {
-  padding: 2em;
-}
+  .logo > h1 {
+    font-size: 40px;
+  }
 
-.read-the-docs {
-  color: #888;
+  .nav-items {
+    font-size: 30px;
+  }
+
+  #about {
+    font-size: 50px;
+  }
+  .cat-gif {
+    height: 80px;
+  }
+  .bio-subheader{
+    font-size: 20px;
+  }
+  .image2 {
+    height: 30em;
+    width: 40em;
+  }
+  .bio-section {
+    font-size: 20px;
+  }
+
+  .tech-header { font-size: 50px; }
+  .tech-subheader {font-size: 20px;}
+  i { font-size: 90px;}
+
+  #projects { margin: 4em;}
+  .projects-title { font-size: 60px;}
+  .proj-img { 
+    height: auto;
+    width: 50em;
+  }
+
+  .contact-header { 
+    font-size: 50px;
+  }
+
+  .contact-subhead {font-size: 25px;}
+
+  .contact-text {
+    font-size: 20px;
+    margin-bottom: 2em;
+  }
+
+  .icon-container { margin-bottom: 2em;} 
+  .email-link { font-size: 25px;}
+
+  .email-link > p { font-size: 25px;}
+
+  footer { font-size: 15px;}
 }
